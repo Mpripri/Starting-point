@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel – Starting Point</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header class="bar">
+    <strong class="logo">Painel do Starting Point</strong>
+    <nav id="bar-actions" hidden>
+      <a href="/memorias" target="_blank" rel="noopener">Ver galeria</a>
+      <button type="button" id="logout" class="link">Sair</button>
+    </nav>
+  </header>
+
+  <main>
+    <p id="message" class="message" role="status" aria-live="polite" hidden></p>
+
+    <section id="login-view" class="card narrow" hidden>
+      <h1>Entrar</h1>
+      <form id="login-form">
+        <label>E-mail <input type="email" name="email" autocomplete="username" required></label>
+        <label>Senha <input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="primary" type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <div id="panel-view" class="layout" hidden>
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Nova fotografia</h2>
+        <form id="photo-form" novalidate>
+          <label>Imagem (JPG, PNG ou WebP)
+            <input type="file" name="image" id="image" accept="image/jpeg,image/png,image/webp">
+          </label>
+          <img id="preview" alt="Pré-visualização da imagem escolhida" hidden>
+          <label>Ano escolar
+            <select name="school_year" required>
+              <option value="">Escolha…</option>
+              <option value="1">Primeiro ano</option>
+              <option value="2">Segundo ano</option>
+              <option value="3">Terceiro ano</option>
+            </select>
+          </label>
+          <label>Título curto <input type="text" name="title" maxlength="120" required></label>
+          <label>Data do acontecimento <input type="date" name="taken_at" required></label>
+          <label>Descrição (2 a 4 frases)
+            <textarea name="description" rows="5" maxlength="1000"></textarea>
+          </label>
+          <div class="row">
+            <button class="primary" type="submit" id="save">Adicionar fotografia</button>
+            <button type="button" id="cancel" hidden>Cancelar edição</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="list-title">
+        <div class="list-head">
+          <h2 id="list-title">Fotografias cadastradas</h2>
+          <label class="inline">Mostrar
+            <select id="filter">
+              <option value="0">Todos os anos</option>
+              <option value="1">Primeiro ano</option>
+              <option value="2">Segundo ano</option>
+              <option value="3">Terceiro ano</option>
+            </select>
+          </label>
+        </div>
+        <ul id="list" class="items"></ul>
+      </section>
+    </div>
+  </main>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

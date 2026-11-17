@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memórias – Starting Point</title>
+  <meta name="description" content="As fotografias da turma, organizadas por ano escolar.">
+  <meta name="theme-color" content="#c9a074">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kaushan+Script&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">Starting Point</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="/" >Home</a>
+        <a href="/memorias" aria-current="page">Memórias</a>
+        <a href="/sobre" >Sobre</a>
+        <a href="/contato" >Contato</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="year-nav" aria-label="Anos escolares">
+    <a href="#primeiro-ano">Primeiro ano</a>
+    <a href="#segundo-ano">Segundo ano</a>
+    <a href="#terceiro-ano">Terceiro ano</a>
+  </nav>
+  <main id="conteudo" class="memories">
+    <h1 class="intro-line">Clique em uma foto para ler a história dela</h1>
+    <div id="album" aria-live="polite"><p class="status">Folheando o álbum…</p></div>
+  </main>
+
+  <dialog id="viewer" class="viewer" aria-labelledby="viewer-title">
+    <button class="viewer-close" type="button" id="viewer-close" aria-label="Fechar e voltar à galeria">&times;</button>
+    <article class="viewer-card">
+      <div class="viewer-photo"><img id="viewer-img" alt=""></div>
+      <div class="viewer-info">
+        <h2 id="viewer-title"></h2>
+        <p class="viewer-date"><time id="viewer-date"></time></p>
+        <p class="viewer-desc" id="viewer-desc"></p>
+        <div class="viewer-nav">
+          <button class="btn" type="button" id="viewer-prev">Anterior</button>
+          <button class="btn" type="button" id="viewer-next">Próxima</button>
+        </div>
+      </div>
+    </article>
+  </dialog>
+  <footer class="site-footer">Starting Point: porque toda grande jornada começa com boas lembranças.</footer>
+  <script src="/js/memorias.js"></script>
+</body></html>
